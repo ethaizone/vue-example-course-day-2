@@ -2,6 +2,8 @@
   <div>
     <span v-if="!content">** This is homepage **</span>
     <span v-else>Content is <b>{{ content }}</b></span>
+    <h1>{{ storeKeyword }}</h1>
+    <h2>Stupid: {{ storeStupid }}</h2>
   </div>
 </template>
 
@@ -19,6 +21,14 @@ export default {
   name: 'web-content',
   data () {
     return contentData
+  },
+  computed: {
+    storeKeyword () {
+      return this.$store.state.currentKeyword
+    },
+    storeStupid () {
+      return this.$store.getters.stupid
+    }
   }
 }
 </script>

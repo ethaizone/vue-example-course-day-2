@@ -1,7 +1,7 @@
 <template>
   <div>
     <input placeholder="Type keyword in me!" v-model="keyword">
-    <button v-show="keyword" @click="search">Search</button>
+    <button v-show="keyword" @click="searchMe">Search</button>
   </div>
 </template>
 
@@ -23,9 +23,10 @@ export default {
     }
   },
   methods: {
-    search () {
-      window.alert('You search ' + this.keyword)
-      this.keyword = null
+    searchMe () {
+      // window.alert('You search ' + this.keyword)
+      // this.keyword = null
+      this.$store.dispatch('search', this.keyword)
     }
   }
 }
