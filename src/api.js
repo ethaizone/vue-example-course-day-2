@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 var api = {
   getJoke () {
-    return Vue.axios.get('http://api.icndb.com/jokes/random')
+    return Vue.axios.get('//api.icndb.com/jokes/random')
   }
 }
 
