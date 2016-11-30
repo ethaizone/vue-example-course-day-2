@@ -1,16 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import api from './api'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentKeyword: 'default keyword'
+    currentKeyword: 'default keyword',
+    currentJoke: 'default joke'
   },
   actions: {
-    // es6 - named function
+    getJoke (context) {
+      context.commit('updateJoke', 'Loading....')
+      api.getJoke().then((response) => {
+        context.commit('updateJoke', response.data.value.joke)
+      }).catch((response) => {
+        context.commit('updateJoke', response)
+      })
+    },
     search (context, keyword) {
-      // window.alert('Search!! ' + keyword)
       context.commit('updateKeyword', keyword)
     }
   },
@@ -18,6 +26,9 @@ export default new Vuex.Store({
     // es6 - arrow function as closure function
     updateKeyword: (state, keyword) => {
       state.currentKeyword = keyword
+    },
+    updateJoke: (state, keyword) => {
+      state.currentJoke = keyword
     }
   },
   getters: {

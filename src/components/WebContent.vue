@@ -4,6 +4,10 @@
     <span v-else>Content is <b>{{ content }}</b></span>
     <h1>{{ storeKeyword }}</h1>
     <h2>Stupid: {{ storeStupid }}</h2>
+
+    <button @click="callJoke">Get random joke.</button><br>
+    <span style="font-size: 14px;">Joke <b v-html>{{ $store.state.currentJoke }}</b></span>
+    
   </div>
 </template>
 
@@ -28,6 +32,11 @@ export default {
     },
     storeStupid () {
       return this.$store.getters.stupid
+    }
+  },
+  methods: {
+    callJoke () {
+      this.$store.dispatch('getJoke')
     }
   }
 }
