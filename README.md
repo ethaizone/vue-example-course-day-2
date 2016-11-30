@@ -1,10 +1,12 @@
-# vue-example-course-day-1
+# vue-example-course-day-2
 
-> Course at E-Commerce Solution Co,ltd. Day 1.
+> Course at E-Commerce Solution Co,ltd. Day 2.
 
 Coverage about v-on, v-bind, v-model, v-if, v-else, v-show and vue components.
 
 Extra: Communicate from component to component. (Vue.$emit and Vue.$on)
+
+Featuring with VueX.
 
 <a href="https://ethaizone.github.io/vue-example-course-day-1/">Demo</a>
 
