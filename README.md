@@ -8,7 +8,7 @@ Extra: Communicate from component to component. (Vue.$emit and Vue.$on)
 
 Featuring with VueX.
 
-<a href="https://ethaizone.github.io/vue-example-course-day-1/">Demo</a>
+<a href="https://ethaizone.github.io/vue-example-course-day-2/">Demo</a>
 
 ## Build Setup
 
